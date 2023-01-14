@@ -10,6 +10,7 @@ import { PathsComponent } from './students/paths/paths.component';
 import { PricingComponent } from './students/pricing/pricing.component';
 import { TeachersComponent } from './students/teachers/teachers.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { NgbModule, NgbPopoverModule, NgbTooltipConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -32,9 +33,11 @@ import { NotFoundComponent } from './not-found/not-found.component';
       {path:'pricing',component: PricingComponent  },
       {path:'teachers',component: TeachersComponent  },
       {path: '**', component: NotFoundComponent}
-    ])
+    ]),
+    NgbModule,
+    NgbPopoverModule
   ],
-  providers: [],
+  providers: [NgbTooltipConfig],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
