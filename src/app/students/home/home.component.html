@@ -208,7 +208,7 @@
 
               <a role="button" ngbTooltip="add to Favorite" placement="top"
                 class="ml-4pt curso material-icons text-20 card-course__icon-favorite"
-                (click)="toggleFavorite()">{{learningPath.isFavorite ? "favorite": "favorite_border"}}</a>
+                (click)="toggleFavorite('learningPath',i)">{{learningPath.isFavorite ? "favorite": "favorite_border"}}</a>
 
             </div>
 
@@ -299,7 +299,7 @@
               </div>
               <a role="button" ngbTooltip="add to Favorite" placement="top"
                 class="ml-4pt material-icons text-20 card-course__icon-favorite"
-                (click)="toggleFavorite()">
+                (click)="toggleFavorite('course',i)">
                 {{course.isFavorite ? "favorite": "favorite_border"}}
                 </a>
             </div>

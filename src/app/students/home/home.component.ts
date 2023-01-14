@@ -94,7 +94,7 @@ export class HomeComponent implements OnInit {
       rating: 4,
       image: "../../../assets/public/images/paths/sketch_430x168.png",
       image2x: "../../../assets/public/images/paths/sketch_40x40@2x.png",
-    isFavorite: false
+      isFavorite: false
     },
     {
       id: 2,
@@ -114,7 +114,7 @@ export class HomeComponent implements OnInit {
       rating: 4,
       image: "../../../assets/public/images/paths/flinto_430x168.png",
       image2x: "../../../assets/public/images/paths/flinto_40x40@2x.png",
-    isFavorite: false
+      isFavorite: false
     },
     {
       id: 3,
@@ -134,7 +134,7 @@ export class HomeComponent implements OnInit {
       rating: 4,
       image: "../../../assets/public/images/paths/photoshop_430x168.png",
       image2x: "../../../assets/public/images/paths/photoshop_40x40@2x.png",
-    isFavorite: false
+      isFavorite: false
     },
     {
       id: 4,
@@ -154,7 +154,7 @@ export class HomeComponent implements OnInit {
       rating: 4,
       image: "../../../assets/public/images/paths/figma_430x168.png",
       image2x: "../../../assets/public/images/paths/figma_40x40@2x.png",
-    isFavorite: false
+      isFavorite: false
     },
 
   ]
@@ -164,8 +164,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  toggleFavorite() {
-    this.isFavorite = !this.isFavorite;
+  toggleFavorite(type: string, index: number) {
+    const elements = (type === 'learningPath') ? this.learningPaths : this.courses;
+    const element = elements[index];
+    element ? elements[index] = { ...element, isFavorite: !element.isFavorite } : null;
   }
 }
 export interface Course {
