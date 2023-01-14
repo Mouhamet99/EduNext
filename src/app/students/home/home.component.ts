@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   isFavorite = false;
-  courses :any[] = [
+  learningPaths: any[] = [
     {
       id: 1,
       title: 'React Native',
@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
       description: 'Learn the fundamentals of working with React Native and how to create basic applications.',
       timeLeft: '50 minutes',
       lessons: 12,
-      isFavorite: false,
+      isFavorite: false
     },
     {
       id: 2,
@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
     },
     {
       id: 3,
-      title: 'Redis' ,
+      title: 'Redis',
       img: '../../../assets/public/images/paths/redis_40x40@2x.png',
       progress: 70,
       totalCourses: 15,
@@ -65,7 +65,7 @@ export class HomeComponent implements OnInit {
     },
     {
       id: 6,
-      title: 'WordPress' ,
+      title: 'WordPress',
       img: '../../../assets/public/images/paths/wordpress_40x40@2x.png',
       progress: 70,
       totalCourses: 15,
@@ -75,6 +75,89 @@ export class HomeComponent implements OnInit {
       isFavorite: false
     },
   ];
+  courses: Course[] = [
+    {
+      id: 1,
+      title: 'Learn Sketch',
+      author: 'Elijah Murray',
+      description: 'Learn the fundamentals of working with Angular and how to create basic applications.',
+      duration: '6',
+      lessons: 12,
+      objectives: [
+        "Fundamentals of working with Angular",
+        "Create complete Angular applications",
+        "Working with the Angular CLI",
+        "Understanding Dependency Injection",
+        "Testing with Angular",
+      ],
+      level: 'beginner',
+      rating: 4,
+      image: "../../../assets/public/images/paths/sketch_430x168.png",
+      image2x: "../../../assets/public/images/paths/sketch_40x40@2x.png",
+    isFavorite: false
+    },
+    {
+      id: 2,
+      title: 'Learn Flinto',
+      author: 'Elijah Murray',
+      description: 'Learn the fundamentals of working with Flinto and how to create basic applications.',
+      duration: '6',
+      lessons: 12,
+      objectives: [
+        "Fundamentals of working with Angular",
+        "Create complete Angular applications",
+        "Working with the Angular CLI",
+        "Understanding Dependency Injection",
+        "Testing with Angular",
+      ],
+      level: 'beginner',
+      rating: 4,
+      image: "../../../assets/public/images/paths/flinto_430x168.png",
+      image2x: "../../../assets/public/images/paths/flinto_40x40@2x.png",
+    isFavorite: false
+    },
+    {
+      id: 3,
+      title: 'Learn Photoshop',
+      author: 'Elijah Murray',
+      description: 'Learn the fundamentals of working with Photoshop and how to create basic applications.',
+      duration: '6',
+      lessons: 12,
+      objectives: [
+        "Fundamentals of working with Angular",
+        "Create complete Angular applications",
+        "Working with the Angular CLI",
+        "Understanding Dependency Injection",
+        "Testing with Angular",
+      ],
+      level: 'beginner',
+      rating: 4,
+      image: "../../../assets/public/images/paths/photoshop_430x168.png",
+      image2x: "../../../assets/public/images/paths/photoshop_40x40@2x.png",
+    isFavorite: false
+    },
+    {
+      id: 4,
+      title: 'Learn Figma',
+      author: 'Elijah Murray',
+      description: 'Learn the fundamentals of working with Figma and how to create basic applications.',
+      duration: '6',
+      lessons: 12,
+      objectives: [
+        "Fundamentals of working with Angular",
+        "Create complete Angular applications",
+        "Working with the Angular CLI",
+        "Understanding Dependency Injection",
+        "Testing with Angular",
+      ],
+      level: 'beginner',
+      rating: 4,
+      image: "../../../assets/public/images/paths/figma_430x168.png",
+      image2x: "../../../assets/public/images/paths/figma_40x40@2x.png",
+    isFavorite: false
+    },
+
+  ]
 
   constructor() { }
 
@@ -84,4 +167,18 @@ export class HomeComponent implements OnInit {
   toggleFavorite() {
     this.isFavorite = !this.isFavorite;
   }
+}
+export interface Course {
+  id: number;
+  title: string;
+  author: string;
+  rating: number;
+  duration: string;
+  objectives: string[];
+  lessons: number;
+  image: string;
+  image2x: string;
+  level: string;
+  description: string;
+  isFavorite: boolean;
 }
