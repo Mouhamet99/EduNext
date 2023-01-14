@@ -154,7 +154,7 @@ export class HomeComponent implements OnInit {
       rating: 4,
       image: "../../../assets/public/images/paths/figma_430x168.png",
       image2x: "../../../assets/public/images/paths/figma_40x40@2x.png",
-      isFavorite: false
+      isFavorite: true
     },
 
   ]
